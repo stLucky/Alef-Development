@@ -1,0 +1,104 @@
+$scroll-size-mobile: 40px;
+$scroll-size-tablet: 59px;
+
+.btn {
+  @include btn-reset;
+  @include inline-flex;
+
+  width: 100%;
+  padding: 15px;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  font-family: inherit;
+  color: $white-basic;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &--primary {
+    background-color: $blue-basic;
+
+    transition: background-color $transition-duration;
+
+    &:hover {
+      background-color: darken($color: $blue-basic, $amount: 10%);
+    }
+
+    &:active {
+      background-color: darken($color: $blue-basic, $amount: 20%);
+    }
+  }
+
+  &--disabled {
+    background-color: $black-basic;
+
+    &:hover {
+      cursor: default;
+    }
+  }
+
+  &--more {
+    max-width: $card-width;
+
+    font-weight: 400;
+    line-height: 17px;
+    color: $black-extra;
+
+    background-color: transparent;
+    border: 1px solid $gray-basic;
+    border-radius: 10px;
+
+    transition: border-color $transition-duration;
+
+    &:hover {
+      border-color: darken($color: $gray-basic, $amount: 40%);
+    }
+
+    &:active {
+      border-color: darken($color: $gray-basic, $amount: 70%);
+    }
+  }
+
+  &--scroll {
+    $arrow-size: 13px;
+
+    position: fixed;
+
+    width: $scroll-size-mobile;
+    height: $scroll-size-mobile;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+
+      width: $arrow-size;
+      height: $arrow-size;
+
+      border-top: 3px solid $white-basic;
+      border-left: 3px solid $white-basic;
+      transform: translate(-50%, -25%) rotate(45deg);
+    }
+  }
+
+  @media #{$tablet} {
+    padding: 23px;
+
+    font-size: 16px;
+    line-height: 20px;
+
+    &--more {
+      font-size: 14px;
+      line-height: 17px;
+    }
+
+    &--scroll {
+      width: $scroll-size-tablet;
+      height: $scroll-size-tablet;
+    }
+  }
+}

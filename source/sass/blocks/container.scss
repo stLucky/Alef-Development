@@ -1,0 +1,35 @@
+.container {
+  padding: 0 $paddings-mobile;
+
+  @media #{$tablet} {
+    padding: 0 $paddings-tablet;
+  }
+
+  @media #{$desktop} {
+    box-sizing: content-box;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 $paddings-desktop;
+  }
+
+  &--cards {
+    max-width: $card-width;
+    margin: 0 auto;
+
+    @media #{$two-column-min} {
+      max-width: none;
+    }
+
+    @media #{$two-column-max} {
+      max-width: $two-column-max-point;
+    }
+
+    @media #{$three-column-min} {
+      max-width: none;
+    }
+
+    @media #{$three-column-max} {
+      max-width: $three-column-max-point;
+    }
+  }
+}

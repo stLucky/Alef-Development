@@ -1,0 +1,61 @@
+// Colors
+$black-basic: #1f2021;
+$black-extra: #000000;
+$white-basic: #ffffff;
+$gray-basic: #cacaca;
+$light-blue: #e5e5e5;
+$blue-basic: #6ebbd3;
+$red-basic: #e62d2d;
+// Fonts
+
+$basic-font: "Montserrat", "Arial", sans-serif;
+
+// Transition
+
+$transition-duration: 200ms;
+
+// Cards
+$img-width: 380px;
+$img-min-width: 280px;
+$card-width: $img-width;
+$card-min-width-mobile: $img-min-width;
+$card-min-width-tablet: $img-min-width + 40px;
+$cards-gap: 20px;
+$cards-y-gap: 24px;
+
+$header-bg-height: 252px;
+$header-bottom-padding: 61px;
+$cats-title-height: 50px;
+$cats-top-padding-tablet: 37px;
+$cats-bottom-padding-mobile: 50px;
+$cats-bottom-padding-tablet: 81px;
+
+// Other
+
+$base-index: 0;
+$paddings-mobile: 20px;
+$paddings-tablet: 50px;
+$paddings-desktop: 130px;
+
+// Viewports
+// минимальная ширина вьюпорта под двухколоночную сетку
+$two-column-min-point: ($card-min-width-mobile * 2) + ($paddings-mobile * 2) +
+  $cards-gap;
+$two-column-min: "(min-width: #{$two-column-min-point})";
+// максимальная ширина вьюпорта под двухколоночную сетку
+$two-column-max-point: $card-width * 2 + $cards-gap + ($paddings-tablet * 2);
+$two-column-max: "(min-width: #{$two-column-max-point})";
+// минимальная ширина вьюпорта под трехколоночную сетку
+$three-column-min-point: ($card-min-width-tablet * 3) + ($paddings-tablet * 2) +
+  2 * $cards-gap;
+$three-column-min: "(min-width: #{$three-column-min-point})";
+// максимальная ширина вьюпорта под трехколоночную сетку
+$three-column-max-point: ($card-width * 3) + ($paddings-tablet * 2) + 2 *
+  $cards-gap;
+$three-column-max: "(min-width: #{$three-column-max-point})";
+// ширина под планшеты
+$tablet-width: 768px;
+$tablet: "(min-width: #{$tablet-width})";
+// ширина под пк
+$desktop-width: 1440px;
+$desktop: "(min-width: #{$desktop-width})";

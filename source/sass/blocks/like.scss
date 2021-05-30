@@ -1,0 +1,28 @@
+.like {
+  @include btn-reset;
+
+  width: 34px;
+  height: 31px;
+
+  background-image: url("../img/like.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  will-change: transform;
+  opacity: 0.5;
+
+  transition: transform $transition-duration ease-out;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &--active {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+
+  @media #{$tablet} {
+    width: 46px;
+    height: 42px;
+  }
+}

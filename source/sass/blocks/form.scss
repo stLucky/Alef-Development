@@ -1,0 +1,150 @@
+$checkbox-size: 18px;
+
+.form {
+  @media #{$two-column-min} {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+}
+
+.form__content {
+  @media #{$two-column-min} {
+    flex-grow: 1;
+    margin-right: 16px;
+  }
+}
+
+.form__field {
+  margin: 0 0 15px;
+
+  @media #{$three-column-min} {
+    margin: 0 0 24px;
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+}
+
+.form__input {
+  width: 100%;
+  padding: 15px;
+
+  font-size: 14px;
+  line-height: 17px;
+  color: $black-extra;
+
+  background-color: $white-basic;
+  border: none;
+  border-radius: 10px;
+
+  transition: background-color $transition-duration;
+
+  &::placeholder {
+    color: $black-extra;
+  }
+
+  &:hover {
+    background-color: darken($color: $white-basic, $amount: 10%);
+  }
+
+  &:focus {
+    color: $white-basic;
+
+    background-color: transparent;
+    outline: none;
+    box-shadow: inset 0 0 0 2px white;
+
+    &::placeholder {
+      color: $white-basic;
+    }
+  }
+
+  @media #{$tablet} {
+    padding: 24px 32px;
+  }
+
+  @media #{$two-column-min} {
+    min-width: 300px;
+  }
+}
+
+.form__label-checkbox {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+
+  font-size: 14px;
+  line-height: 17px;
+
+  transition: color $transition-duration;
+
+  &::before {
+    content: "";
+
+    flex-shrink: 0;
+    width: $checkbox-size;
+    height: $checkbox-size;
+    margin-right: 10px;
+
+    background-color: $blue-basic;
+    border-radius: 3px;
+
+    transition: box-shadow $transition-duration,
+      background-color $transition-duration;
+  }
+
+  &::after {
+    position: absolute;
+    top: $checkbox-size / 2;
+    left: $checkbox-size / 2;
+
+    width: 6px;
+    height: 9px;
+
+    border-right: 3px solid $white-basic;
+    border-bottom: 3px solid $white-basic;
+    transform: translate(-50%, -60%) rotate(45deg);
+  }
+
+  &:hover {
+    color: darken($color: $white-basic, $amount: 20%);
+
+    cursor: pointer;
+
+    &::before {
+      background-color: darken($color: $blue-basic, $amount: 30%);
+      box-shadow: -2px -2px 0 0 $white-basic;
+    }
+  }
+
+  @media #{$tablet} {
+    &::before {
+      margin-right: 18px;
+    }
+  }
+}
+
+.form__checkbox:checked + .form__label-checkbox::after {
+  content: "";
+}
+
+.form__checkbox:focus-visible + .form__label-checkbox::before {
+  background-color: darken($color: $blue-basic, $amount: 30%);
+  box-shadow: -2px -2px 0 0 $white-basic;
+}
+
+.form__btn {
+  border-radius: 10px;
+
+  @media #{$two-column-min} {
+    flex-grow: 1;
+    width: auto;
+  }
+
+  @media #{$desktop} {
+    min-width: 250px;
+  }
+}

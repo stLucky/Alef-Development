@@ -1,0 +1,79 @@
+$burger-size: 45px;
+$burger-inner-width: 27px;
+$burger-inner-height: 17px;
+$burger-component-height: 2px;
+$burger-number: 3;
+$burger-spaces: $burger-inner-height -
+  ($burger-component-height * $burger-number);
+$burger-space: $burger-spaces / ($burger-number - 1);
+
+.burger {
+  @include inline-flex;
+
+  width: $burger-size;
+  height: $burger-size;
+  padding: 0;
+
+  background-color: transparent;
+  border: 2px solid rgba($white-basic, 0.1);
+  border-radius: 50%;
+
+  transition: border-color $transition-duration;
+
+  &::before {
+    content: "";
+
+    width: $burger-inner-width;
+    height: $burger-inner-height;
+    /* stylelint-disable */
+
+    background-image: linear-gradient(
+      to top,
+      $white-basic $burger-component-height,
+      transparent $burger-component-height,
+      transparent ($burger-component-height + $burger-space),
+      $white-basic ($burger-component-height + $burger-space),
+      $white-basic ($burger-component-height * 2 + $burger-space),
+      transparent ($burger-component-height * 2 + $burger-space),
+      transparent (calc(100% - #{$burger-component-height})),
+      $white-basic (calc(100% - #{$burger-component-height}))
+    );
+  }
+
+  &:hover {
+    border-color: $white-basic;
+    cursor: pointer;
+  }
+
+  &--close {
+    $y-offset: 15px;
+
+    position: relative;
+
+    width: $burger-size;
+    height: $burger-size;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: $y-offset;
+      left: 50%;
+
+      width: $burger-component-height;
+      height: calc(100% - #{$y-offset});
+
+      background-color: $white-basic;
+      border-radius: 4px;
+    }
+
+    &::before {
+      background-image: none;
+      transform: translate(-50%, -$y-offset / 2) rotate(45deg);
+    }
+
+    &::after {
+      transform: translate(-50%, -$y-offset / 2) rotate(-45deg);
+    }
+  }
+}
