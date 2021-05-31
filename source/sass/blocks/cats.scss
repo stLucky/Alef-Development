@@ -20,7 +20,7 @@
 
   @media #{$desktop} {
     $offset-title: $cats-top-padding-tablet + $header-bottom-padding +
-    $cats-title-height;
+      $cats-title-height;
 
     position: relative;
 
@@ -64,7 +64,7 @@
 
   @media #{$two-column-min} {
     flex-grow: 1;
-    width: calc(50% - #{$cards-gap});/* stylelint-disable-line */
+    width: calc(50% - #{$cards-gap}); /* stylelint-disable-line */
     margin: $cards-gap / 2;
 
     &:last-child {
@@ -73,7 +73,7 @@
   }
 
   @media #{$three-column-min} {
-    width: calc(100% / 3 - #{$cards-gap * 2});/* stylelint-disable-line */
+    width: calc(100% / 3 - #{$cards-gap * 2}); /* stylelint-disable-line */
   }
 
   @media #{$desktop} {
