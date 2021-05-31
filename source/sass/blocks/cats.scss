@@ -20,7 +20,7 @@
 
   @media #{$desktop} {
     $offset-title: $cats-top-padding-tablet + $header-bottom-padding +
-      $cats-title-height;
+    $cats-title-height;
 
     position: relative;
 

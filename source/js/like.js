@@ -20,9 +20,11 @@ listCards.addEventListener('click', (evt) => {
 
   if (isLike ) {
     target.classList.toggle('like--active');
+    target.ariaLabel = 'Добавить в избранное';
 
     if (!isActiveLike) {
       setPopup();
+      target.ariaLabel = 'Убрать из избранного';
     }
   }
 })

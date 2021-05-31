@@ -52,6 +52,7 @@ $arrow-size-tablet: 11px;
   align-items: center;
 
   color: $black-extra;
+
   transition: opacity $transition-duration;
 
   &::after {
@@ -79,9 +80,9 @@ $arrow-size-tablet: 11px;
 
   @media #{$tablet} {
     &::after {
-      margin-left: 14px;
       width: $arrow-size-tablet;
       height: $arrow-size-tablet;
+      margin-left: 14px;
     }
 
     &--spec-margin {

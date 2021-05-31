@@ -88,12 +88,14 @@ $img-height-mobile: 192px;
   font-size: 12px;
   line-height: 14px;
   text-align: center;
+  text-shadow: 0 0 1px $black-basic;
 
   background-color: rgba($white-basic, 0.6);
   border-radius: 10px 10px 0 0;
   transform: translateY(100%);
+
   transition: transform $transition-duration ease-out;
-  text-shadow: 0 0 1px $black-basic;
+
   will-change: transform;
 
   &--show {
@@ -101,9 +103,10 @@ $img-height-mobile: 192px;
   }
 
   @media #{$tablet} {
+    padding: 15px 25px 10px;
+
     font-size: 14px;
     line-height: 16px;
-    padding: 15px 25px 10px;
   }
 }
 
